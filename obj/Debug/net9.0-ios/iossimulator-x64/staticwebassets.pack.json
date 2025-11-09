@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\obj\\Debug\\net9.0-ios\\iossimulator-x64\\scopedcss\\bundle\\SPA1.styles.css",
+      "PackagePath": "staticwebassets\\SPA1.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\images\\LOGO2.png",
+      "PackagePath": "staticwebassets\\images\\LOGO2.png"
+    },
+    {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.SPA1.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.SPA1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.build.SPA1.props",
+      "PackagePath": "build\\SPA1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.buildMultiTargeting.SPA1.props",
+      "PackagePath": "buildMultiTargeting\\SPA1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-ios\\iossimulator-x64\\staticwebassets\\msbuild.buildTransitive.SPA1.props",
+      "PackagePath": "buildTransitive\\SPA1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

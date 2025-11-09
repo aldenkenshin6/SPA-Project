@@ -1,0 +1,335 @@
+﻿.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #2e3f38;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+}
+
+.sidebar-header p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px 18px;
+        color: white;
+        font-size: 17px;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s, transform 0.2s;
+        gap: 10px;
+    }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #3b5048;
+            transform: translateY(4px);
+        }
+
+.sidebar-footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.AdminUser{
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.sidebar-footer i{
+    font-size: 35px;
+}
+
+#Logout {
+    font-size: 37px;
+    color: white;
+}
+.Labels{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.Admin-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Session-Username{
+    font-size: 13px;
+}
+
+.ri-user-line {
+    border: 2px solid;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+
+/* Main Area */
+.dashboard-main {
+    flex: 1;
+    background: #f3f3f3;
+    padding: 30px;
+}
+
+.dashboard-header h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.dashboard-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.metric-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+    .metric-card h3 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .metric-card p {
+        color: #555;
+        margin-top: 5px;
+    }
+
+/* Appointments and Inventory */
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.btn-view {
+    background: #2e3f38;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .btn-view:hover {
+        background: #3b5048;
+    }
+
+/* Appointment List */
+.appointment-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .appointment-item.active {
+        border-color: #2e3f38;
+    }
+
+/* Inventory */
+.inventory-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+    .status.in-stock {
+        background: #e0f5e5;
+        color: #1e824c;
+    }
+
+    .status.low-stock {
+        background: #fff5cc;
+        color: #a67c00;
+    }
+
+    .status.critical {
+        background: #fdeaea;
+        color: #a94442;
+    }
+
+
+/* ===============================
+   📱 Responsive Dashboard Layout
+   =============================== */
+
+/* For tablets (max-width: 992px) */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 220px;
+        padding: 20px 15px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 18px;
+    }
+
+    .dashboard-main {
+        padding: 20px;
+    }
+
+    .dashboard-metrics {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .sidebar-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+        .sidebar-header h2 {
+            font-size: 16px;
+        }
+
+    .nav-links {
+        flex-direction: row;
+        overflow-x: auto;
+        margin-top: 0;
+    }
+
+        .nav-links a {
+            padding: 8px 10px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .dashboard-main {
+        padding: 15px;
+    }
+
+    .metric-card {
+        padding: 15px;
+    }
+
+        .metric-card h3 {
+            font-size: 20px;
+        }
+}
+
+/* For very small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .logo {
+        width: 60px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 14px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 18px;
+    }
+
+    .metric-card h3 {
+        font-size: 18px;
+    }
+
+    .btn-view {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,215 @@
+﻿.login-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Left Side */
+.login-left {
+    flex: 1;
+    background: #2e3f38;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+    .login-left .logo {
+        width: 400px;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .login-left h1 {
+        color: white;
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .login-left p {
+        font-size: 20px;
+        max-width: 480px;
+        line-height: 1.4;
+        opacity: 0.9;
+    }
+
+/* Right Side */
+.login-right {
+    flex: 1;
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.login-card {
+    background: white;
+    padding: 50px 60px;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    width: 550px;
+    height: auto;
+}
+
+    .login-card h2 {
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .login-card p {
+        color: #666;
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+/* Input fields */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+    .form-group label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+
+/* Remember / Forgot Password */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+    .options label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #333;
+    }
+
+    .options a {
+        color: #2e3f38;
+        text-decoration: none;
+    }
+
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2e3f38;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+    .login-btn:hover {
+        background: #3b5048;
+    }
+
+.message-the{
+    display: flex;
+    margin-top: 12px;
+    justify-content: center;
+    color: red;
+
+}
+
+
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .login-left,
+    .login-right {
+        flex: none;
+        width: 100%;
+        padding: 30px;
+    }
+
+    .login-left {
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+
+        .login-left h1 {
+            font-size: 48px;
+        }
+
+        .login-left .logo {
+            width: 300px;
+        }
+
+    .login-card {
+        width: 90%;
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Mobile Phones (width ≤ 600px) */
+@media (max-width: 600px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .login-left {
+        padding: 20px;
+    }
+
+        .login-left h1 {
+            font-size: 36px;
+        }
+
+        .login-left p {
+            font-size: 16px;
+            max-width: 100%;
+        }
+
+        .login-left .logo {
+            width: 220px;
+        }
+
+    .login-card {
+        width: 90%;
+        padding: 25px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login-btn {
+        padding: 10px;
+        font-size: 15px;
+    }
+}

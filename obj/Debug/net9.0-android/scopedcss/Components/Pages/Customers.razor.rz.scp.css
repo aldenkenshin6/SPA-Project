@@ -1,0 +1,112 @@
+/* Page Container */
+.container[b-6n14rtgent] {
+    padding: 30px;
+    background: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Title */
+.title[b-6n14rtgent] {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Table Styling */
+.custom-table[b-6n14rtgent] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+    .custom-table th[b-6n14rtgent], .custom-table td[b-6n14rtgent] {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .custom-table th[b-6n14rtgent] {
+        background-color: #0078D4;
+        color: white;
+    }
+
+    .custom-table tr:hover[b-6n14rtgent] {
+        background-color: #f1f5f9;
+    }
+
+/* Form Styling */
+.form-container[b-6n14rtgent] {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+    .form-container h2[b-6n14rtgent] {
+        text-align: center;
+        color: #0078D4;
+        margin-bottom: 20px;
+    }
+
+.form-group[b-6n14rtgent] {
+    margin-bottom: 15px;
+}
+
+    .form-group label[b-6n14rtgent] {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[b-6n14rtgent],
+    .form-group select[b-6n14rtgent] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+        .form-group input:focus[b-6n14rtgent],
+        .form-group select:focus[b-6n14rtgent] {
+            border-color: #0078D4;
+            outline: none;
+        }
+
+.submit-btn[b-6n14rtgent] {
+    display: block;
+    width: 100%;
+    background-color: #0078D4;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .submit-btn:hover[b-6n14rtgent] {
+        background-color: #005fa3;
+    }
+
+.message[b-6n14rtgent] {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #28a745;
+}
+
+@media (max-width: 768px) {
+    .custom-table[b-6n14rtgent] {
+        font-size: 0.9rem;
+    }
+}

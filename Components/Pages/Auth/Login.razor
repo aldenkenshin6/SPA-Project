@@ -1,0 +1,88 @@
+﻿@page "/"
+@page "/auth/login"
+@using SPA1.Data
+@using SPA1.Models
+@using SPA1.Services
+@using BCrypt.Net
+@inject SpaContext _context
+@inject UserSession Session
+@inject NavigationManager Navigation
+
+<div class="login-container">
+    <div class="login-left">
+        <img src="images/LOGO2.png" alt="Spa Logo" class="logo" />
+        <h1 class="titlespa">Spa Management</h1>
+        <p>A system that helps manage spa appointments, staff, and customer records.</p>
+    </div>
+
+    <div class="login-right">
+        <div class="login-card">
+            <h2>Welcome Back</h2>
+            <p>Please sign in to continue</p>
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" @bind="username" placeholder="Enter your username"/>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" @bind="password" placeholder="Enter your password" />
+            </div>
+
+            <div class="options">
+                <label><input type="checkbox"/> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button class="login-btn" @onclick="CheckLogin">Sign in</button>
+            <p class="message-the" style="color: red">@message</p>
+
+            @* <button @onclick="cus">Customers</button> *@
+
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private string? username;
+    private string? password;
+    private string? message;
+
+    private void CheckLogin()
+    {
+        var user = _context.Users.FirstOrDefault(u => u.Username == username);
+
+        if (user != null && BCrypt.Verify(password, user.Password))
+        {
+            // Store Username and Role to the Session Data
+            Session.SetUser(user.Username, user.Role);
+
+            // Show successfully login and validate the credentials
+            // message = $"Message: {user.Username}";
+
+            if (user.Role == "Admin")
+            {
+                Navigation.NavigateTo("/Admin/Dashboard");
+            }
+            else if (user.Role == "Cashier")
+            {
+                Navigation.NavigateTo("/Cashier/PointOfSale");
+            }
+            else
+            {
+                Navigation.NavigateTo("/Staff/Dashboard");
+            }
+        }
+        else
+        {
+            message = "Invalid Username or Password";
+        }
+    }
+
+    void cus()
+    {
+        Navigation.NavigateTo("/customers/table");
+    }
+}

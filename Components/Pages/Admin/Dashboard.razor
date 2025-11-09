@@ -1,0 +1,165 @@
+﻿@page "/Admin/Dashboard"
+@using SPA1.Services
+@inject UserSession Session
+@inject NavigationManager Navigation
+
+
+
+<div class="dashboard-container">
+    <!-- Sidebar Kupal -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/LOGO2.png" class="logo" alt="Logo" />
+            <h2>Spa Management</h2>
+            <p>Wellness & Beauty Center</p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="active"><i class="ri-dashboard-line"></i> Dashboard</a>
+            <a href="#" @onclick="CustomersManagement"><i class="ri-user-3-line"></i> Customers</a>
+            <a href="#" @onclick="Appointment"><i class="ri-calendar-line"></i> Appointment</a>
+            <a href="#" @onclick="Services"><i class="ri-service-line"></i> Services</a>
+            <a href="#" @onclick="Employee"><i class="ri-team-line"></i> Employees</a>
+            <a href="#" @onclick="Payments"><i class="ri-wallet-line"></i> Payments</a>
+        </nav>
+
+
+        <div class="sidebar-footer">
+            <div class="AdminUser">
+                <i class="ri-user-line"></i>
+                <div class="Labels">
+                    <label class="Admin-title">Admin User</label>
+                    <label class="Session-Username">@Session.UserName</label>
+                </div>
+            </div>
+            <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>
+        </div>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <h2>Dashboard</h2>
+            <p>Welcome back! Here's what's happening today.</p>
+        </header>
+
+        <!-- Metrics -->
+        <section class="dashboard-metrics">
+            <div class="metric-card">
+                <h3>₱12,000</h3>
+                <p>Total Revenue</p>
+            </div>
+            <div class="metric-card">
+                <h3>248</h3>
+                <p>Total Customers</p>
+            </div>
+            <div class="metric-card">
+                <h3>24</h3>
+                <p>Active Services</p>
+            </div>
+            <div class="metric-card">
+                <h3>8</h3>
+                <p>Low Stock Item</p>
+            </div>
+        </section>
+
+        <!-- Appointments and Inventory -->
+        <section class="dashboard-content">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Today's Appointments</h3>
+                    <button class="btn-view">View All</button>
+                </div>
+                <div class="appointment-list">
+                    <div class="appointment-item active">
+                        <div>
+                            <strong>10:00 AM</strong>
+                            <p>Kaye Mizal</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Swedish Massage</p>
+                            <small>Emma Watson</small>
+                        </div>
+                    </div>
+                    <div class="appointment-item">
+                        <div>
+                            <strong>10:00 AM</strong>
+                            <p>Kaye Mizal</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Swedish Massage</p>
+                            <small>Emma Watson</small>
+                        </div>
+                    </div>
+                    <div class="appointment-item">
+                        <div>
+                            <strong>10:00 AM</strong>
+                            <p>Kaye Mizal</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Swedish Massage</p>
+                            <small>Emma Watson</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Inventory Status</h3>
+                    <button class="btn-view">View All</button>
+                </div>
+                <div class="inventory-list">
+                    <div class="inventory-item">
+                        <div>Aromatherapy Oils</div>
+                        <span class="status in-stock">In Stock</span>
+                        <small>24/50</small>
+                    </div>
+                    <div class="inventory-item">
+                        <div>Massage Stones</div>
+                        <span class="status low-stock">Low Stock</span>
+                        <small>8/40</small>
+                    </div>
+                    <div class="inventory-item">
+                        <div>Himalayan Salt</div>
+                        <span class="status critical">Critical</span>
+                        <small>3/30</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+@code {
+
+
+    private void Logout()
+    {
+        Session.Logout();
+        Navigation.NavigateTo("/auth/login");
+    }
+
+    private void CustomersManagement()
+    {
+        Navigation.NavigateTo("/Admin/Customers-Management");
+    }
+
+    private void Appointment()
+    {
+        Navigation.NavigateTo("/Admin/Appointments");
+    }
+
+    private void Services()
+    {
+        Navigation.NavigateTo("/Admin/Services");
+    }
+    private void Employee()
+    {
+        Navigation.NavigateTo("/Admin/Employees");
+    }
+    private void Payments()
+    {
+        Navigation.NavigateTo("/Admin/Payments");
+    }
+}
