@@ -1,0 +1,206 @@
+.pos-container[b-8e71ty8dug] {
+    display: flex;
+    height: 100vh;
+    background: #f5f5f5;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar[b-8e71ty8dug] {
+    width: 230px;
+    background: #3f4c46;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.sidebar-header[b-8e71ty8dug] {
+    text-align: center;
+}
+
+    .sidebar-header .logo[b-8e71ty8dug] {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-header h2[b-8e71ty8dug] {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .sidebar-header p[b-8e71ty8dug] {
+        font-size: 12px;
+        color: #b6c0b8;
+    }
+
+.nav-links[b-8e71ty8dug] {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+    .nav-links a[b-8e71ty8dug] {
+        padding: 12px 20px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+    }
+
+        .nav-links a:hover[b-8e71ty8dug],
+        .nav-links a.active[b-8e71ty8dug] {
+            background: #53655d;
+        }
+
+.sidebar-footer[b-8e71ty8dug] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Main POS Area */
+.pos-main[b-8e71ty8dug] {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Services Section */
+.services-section[b-8e71ty8dug] {
+    flex: 2;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+    .services-section h2[b-8e71ty8dug] {
+        margin-bottom: 10px;
+    }
+
+.search-bar input[b-8e71ty8dug] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.filter-buttons[b-8e71ty8dug] {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .filter-buttons button[b-8e71ty8dug] {
+        border: 1px solid #ccc;
+        background: white;
+        border-radius: 6px;
+        padding: 5px 15px;
+        cursor: pointer;
+    }
+
+    .filter-buttons .active[b-8e71ty8dug] {
+        background: #3f4c46;
+        color: white;
+    }
+
+.services-grid[b-8e71ty8dug] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.service-card[b-8e71ty8dug] {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .service-card h3[b-8e71ty8dug] {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .service-card span[b-8e71ty8dug] {
+        font-weight: bold;
+        align-self: flex-end;
+    }
+
+/* Order Summary */
+.order-summary[b-8e71ty8dug] {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+    .order-summary h3[b-8e71ty8dug] {
+        display: flex;
+        justify-content: space-between;
+    }
+
+.order-item[b-8e71ty8dug] {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.item-actions[b-8e71ty8dug] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .item-actions button[b-8e71ty8dug] {
+        background: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+.ri-delete-bin-6-line[b-8e71ty8dug] {
+    color: red;
+    cursor: pointer;
+}
+
+.order-totals[b-8e71ty8dug] {
+    margin-top: 15px;
+}
+
+.order-buttons[b-8e71ty8dug] {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-pay[b-8e71ty8dug] {
+    background: #3f4c46;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-discount[b-8e71ty8dug], .btn-print[b-8e71ty8dug] {
+    background: #d9d9d9;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}

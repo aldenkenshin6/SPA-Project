@@ -38,7 +38,8 @@
             <button class="login-btn" @onclick="CheckLogin">Sign in</button>
             <p class="message-the" style="color: red">@message</p>
 
-            @* <button @onclick="cus">Customers</button> *@
+            <button @onclick="cus">Customers</button>
+
 
         </div>
     </div>
@@ -68,7 +69,7 @@
             }
             else if (user.Role == "Cashier")
             {
-                Navigation.NavigateTo("/Cashier/PointOfSale");
+                Navigation.NavigateTo("/Cashier/POS");
             }
             else
             {
@@ -85,4 +86,5 @@
     {
         Navigation.NavigateTo("/customers/table");
     }
+
 }

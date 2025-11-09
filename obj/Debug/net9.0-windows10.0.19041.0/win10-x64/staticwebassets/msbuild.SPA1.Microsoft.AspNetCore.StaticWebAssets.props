@@ -72,13 +72,33 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>e5e3qakcu8</Fingerprint>
-      <Integrity>npOS7gstxIP9vu4iVVJOePlPae+T7pplgWUgOE9cfOE=</Integrity>
+      <Fingerprint>b62fjxyce2</Fingerprint>
+      <Integrity>w+/xPdBNrb0mE1CxPs9JJIx2JhxmjzH8/R02SbHx7O8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>3871</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 06:41:56 GMT</LastWriteTime>
+      <LastWriteTime>Sun, 09 Nov 2025 13:13:48 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Login.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\back.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>SPA1</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>images/back.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rfhkfjksh0</Fingerprint>
+      <Integrity>R3CGhu8BLU8WPjutRIPTUl0o3TbJcghsNO1VGxWs8wc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <FileLength>558933</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 09:55:28 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\back.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\LOGO2.png'))">
       <SourceType>Package</SourceType>
@@ -117,7 +137,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1213</FileLength>
-      <LastWriteTime>Sat, 08 Nov 2025 14:03:03 GMT</LastWriteTime>
+      <LastWriteTime>Sun, 09 Nov 2025 16:40:03 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SPA1.styles.css'))">
@@ -132,12 +152,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>aampsavh7b</Fingerprint>
-      <Integrity>EnEiGzyN6htV4JSYt7o1IG2/Q1ibX3NDjM2VpLP4Rj4=</Integrity>
+      <Fingerprint>jr5xkra0i8</Fingerprint>
+      <Integrity>keQ/N/ehxC/0/1XTSv/qZSYVWgD0JaAUBwB433Ssnks=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>16599</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 06:30:52 GMT</LastWriteTime>
+      <FileLength>23825</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 18:44:17 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SPA1.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

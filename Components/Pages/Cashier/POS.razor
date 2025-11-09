@@ -1,0 +1,100 @@
+﻿@page "/Cashier/POS"
+@using SPA1.Services
+@inject UserSession Session
+@inject NavigationManager Navigation
+
+<div class="pos-container">
+    <!-- Sidebar sa mga kupal -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/LOGO2.png" alt="Logo" class="logo" />
+            <h2>Spa Management</h2>
+            <p>Wellness & Beauty Center</p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="/POS" class="active"><i class="ri-store-line"></i>Point of Sale</a>
+            <a href="/Customers"><i class="ri-user-3-line"></i>Customers</a>
+            <a href="/Appointments"><i class="ri-calendar-schedule-line"></i>Appointment</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="AdminUser">
+                <i class="ri-user-line"></i>
+                <div class="Labels">
+                    <label class="Admin-title">@Session.Role User</label>
+                    <label class="Session-Username">@Session.UserName</label>
+                </div>
+            </div>
+            <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>
+        </div>
+    </aside>
+
+    <!-- Main POS Station -->
+    <main class="pos-main">
+        <div class="services-section">
+            <h2>Services</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Search services.." />
+            </div>
+
+            <div class="filter-buttons">
+                <button class="active">All</button>
+                <button>Massage</button>
+                <button>Facial</button>
+            </div>
+
+            <div class="services-grid">
+                @for (int i = 0; i < 8; i++)
+                {
+                    <div class="service-card">
+                        <h3>Hot Stone Massage</h3>
+                        <p>90 mins</p>
+                        <span>₱160</span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h3>Current Order <span class="clear-btn">Clear</span></h3>
+
+            <div class="order-items">
+                @for (int i = 0; i < 4; i++)
+                {
+                    <div class="order-item">
+                        <p>Hot Stone Massage <span>₱160</span></p>
+                        <div class="item-actions">
+                            <button>-</button>
+                            <span>2x</span>
+                            <button>+</button>
+                            <i class="ri-delete-bin-6-line"></i>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="order-totals">
+                <p><b>Subtotal:</b> ₱220</p>
+                <p>Tax (8%): ₱16</p>
+                <h4>Total: ₱940</h4>
+            </div>
+
+            <div class="order-buttons">
+                <button class="btn-pay">Pay</button>
+                <button class="btn-discount">Add Discount</button>
+                <button class="btn-print">Print</button>
+            </div>
+        </div>
+    </main>
+</div>
+@code {
+
+    private void Logout()
+    {
+        Session.Logout();
+        Navigation.NavigateTo("/auth/login");
+    }
+
+}

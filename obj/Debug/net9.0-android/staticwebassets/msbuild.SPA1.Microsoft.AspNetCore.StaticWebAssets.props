@@ -72,13 +72,33 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>btr5d33tb2</Fingerprint>
-      <Integrity>D6VO06Pp1fZY3KJGP4RUjmJIBrSlMRtW/aNP35LlG0w=</Integrity>
+      <Fingerprint>b62fjxyce2</Fingerprint>
+      <Integrity>w+/xPdBNrb0mE1CxPs9JJIx2JhxmjzH8/R02SbHx7O8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>3759</FileLength>
-      <LastWriteTime>Thu, 06 Nov 2025 06:05:57 GMT</LastWriteTime>
+      <FileLength>3871</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 13:13:48 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Login.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\back.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>SPA1</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>images/back.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rfhkfjksh0</Fingerprint>
+      <Integrity>R3CGhu8BLU8WPjutRIPTUl0o3TbJcghsNO1VGxWs8wc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <FileLength>558933</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 09:55:28 GMT</LastWriteTime>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\back.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\LOGO2.png'))">
       <SourceType>Package</SourceType>
@@ -132,12 +152,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>aampsavh7b</Fingerprint>
-      <Integrity>EnEiGzyN6htV4JSYt7o1IG2/Q1ibX3NDjM2VpLP4Rj4=</Integrity>
+      <Fingerprint>t3d0df3srv</Fingerprint>
+      <Integrity>p8QvQuEIgAOSTejx97sdyWIy01cRPTGzuzwDhpAjuIw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>16599</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 06:30:50 GMT</LastWriteTime>
+      <FileLength>20847</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 16:36:07 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SPA1.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
