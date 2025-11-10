@@ -1,5 +1,7 @@
 ﻿@page "/Cashier/POS"
 @using SPA1.Services
+@using SPA1.Components.Layout
+@layout MainLayout
 @inject UserSession Session
 @inject NavigationManager Navigation
 
@@ -15,7 +17,7 @@
         <nav class="nav-links">
             <a href="/POS" class="active"><i class="ri-store-line"></i>Point of Sale</a>
             <a href="/Customers"><i class="ri-user-3-line"></i>Customers</a>
-            <a href="/Appointments"><i class="ri-calendar-schedule-line"></i>Appointment</a>
+            <a @onclick="Appointment"><i class="ri-calendar-schedule-line"></i>Appointment</a>
         </nav>
 
         <div class="sidebar-footer">
@@ -23,7 +25,7 @@
                 <i class="ri-user-line"></i>
                 <div class="Labels">
                     <label class="Admin-title">@Session.Role User</label>
-                    <label class="Session-Username">@Session.UserName</label>
+                    <label class="Session-Username">@Session.Email</label>
                 </div>
             </div>
             <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>
@@ -97,4 +99,9 @@
         Navigation.NavigateTo("/auth/login");
     }
 
+    private void Appointment()
+    {
+        Navigation.NavigateTo("/Cashier/Appointment");
+    }
+    
 }

@@ -39,8 +39,6 @@
             <p class="message-the" style="color: red">@message</p>
 
             <button @onclick="cus">Customers</button>
-
-
         </div>
     </div>
 </div>
@@ -58,7 +56,7 @@
         if (user != null && BCrypt.Verify(password, user.Password))
         {
             // Store Username and Role to the Session Data
-            Session.SetUser(user.Username, user.Role);
+            Session.SetUser(user.Username, user.Role, user.Email);
 
             // Show successfully login and validate the credentials
             // message = $"Message: {user.Username}";

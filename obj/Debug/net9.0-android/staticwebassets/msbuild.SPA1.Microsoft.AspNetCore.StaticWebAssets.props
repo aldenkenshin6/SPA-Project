@@ -72,12 +72,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>b62fjxyce2</Fingerprint>
-      <Integrity>w+/xPdBNrb0mE1CxPs9JJIx2JhxmjzH8/R02SbHx7O8=</Integrity>
+      <Fingerprint>htg8us55im</Fingerprint>
+      <Integrity>25qyNTPJ1aT14zszCIXUSruXdkGe1zEnaNONJyS3tw4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>3871</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 13:13:48 GMT</LastWriteTime>
+      <FileLength>3917</FileLength>
+      <LastWriteTime>Sun, 09 Nov 2025 19:12:55 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Login.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\back.png'))">
@@ -137,7 +137,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>1213</FileLength>
-      <LastWriteTime>Sat, 08 Nov 2025 14:03:03 GMT</LastWriteTime>
+      <LastWriteTime>Sun, 09 Nov 2025 16:40:03 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SPA1.styles.css'))">
@@ -152,12 +152,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>t3d0df3srv</Fingerprint>
-      <Integrity>p8QvQuEIgAOSTejx97sdyWIy01cRPTGzuzwDhpAjuIw=</Integrity>
+      <Fingerprint>04ayu1av17</Fingerprint>
+      <Integrity>ULY+Ded0ugP0RPlhWLwM7Rw0knG/jRmG2lh2sZIfq4M=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>20847</FileLength>
-      <LastWriteTime>Sun, 09 Nov 2025 16:36:07 GMT</LastWriteTime>
+      <FileLength>29074</FileLength>
+      <LastWriteTime>Mon, 10 Nov 2025 18:11:23 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\SPA1.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>

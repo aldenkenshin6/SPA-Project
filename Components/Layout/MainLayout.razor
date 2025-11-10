@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+@using SPA1.Services
+@inject NavigationManager Navigation
+@inject UserSession Session
+
+<div class="main-layout">
+    @Body
+</div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        if (!Session.IsLoggedIn)
+        {
+            Navigation.NavigateTo("/auth/login", forceLoad: true);
+        }
+    }
+}

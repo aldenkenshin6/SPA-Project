@@ -1,7 +1,10 @@
 ﻿@page "/Admin/Customers-Management"
 @using SPA1.Services
+@using SPA1.Components.Layout
+@layout MainLayout
 @inject UserSession Session
 @inject NavigationManager Navigation
+
 
 
 <div class="dashboard-container">
@@ -27,7 +30,7 @@
                 <i class="ri-user-line"></i>
                 <div class="Labels">
                     <label class="Admin-title">Admin User</label>
-                    <label class="Session-Username">@Session.UserName</label>
+                    <label class="Session-Username">@Session.Email</label>
                 </div>
             </div>
             <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>

@@ -1,0 +1,134 @@
+﻿@page "/Cashier/Appointment"
+@using SPA1.Services
+@using SPA1.Components.Layout
+@layout MainLayout
+@inject UserSession Session
+@inject NavigationManager Navigation
+
+
+
+<div class="spa-container">
+    <!-- Sidebar sa mga kupal -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/LOGO2.png" alt="Logo" class="logo" />
+            <h2>Spa Management</h2>
+            <p>Wellness & Beauty Center</p>
+        </div>
+
+        <nav class="nav-links">
+            <a @onclick="POS"><i class="ri-store-line"></i>Point of Sale</a>
+            <a href="/Customers"><i class="ri-user-3-line"></i>Customers</a>
+            <a class="active"><i class="ri-calendar-schedule-line"></i>Appointment</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="AdminUser">
+                <i class="ri-user-line"></i>
+                <div class="Labels">
+                    <label class="Admin-title">@Session.Role User</label>
+                    <label class="Session-Username">@Session.Email</label>
+                </div>
+            </div>
+            <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="spa-main">
+        <!-- Date & Time Section -->
+        <section class="section date-time">
+            <h3>Select Date & Time</h3>
+            <div class="calendar">
+                <input type="date" class="calendar-input" />
+            </div>
+            <div class="time-slots">
+                <p>Available Time Slots</p>
+                <div class="slots">
+                    <button>09:00 AM</button>
+                    <button>09:30 AM</button>
+                    <button>10:00 AM</button>
+                    <button disabled>10:30 AM (Booked)</button>
+                    <button>11:00 AM</button>
+                    <button>11:30 AM</button>
+                    <button disabled>12:00 PM (Booked)</button>
+                    <button>12:30 PM</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Schedule -->
+        <section class="section schedule">
+            <h3>Today's Schedule</h3>
+            <div class="schedule-list">
+                <div class="schedule-item">
+                    <div>
+                        <i class="ri-time-line"></i> <b>10:00 AM</b> - Jervans Montero
+                    </div>
+                    <div>Swedish Massage — <span>Emma Wilson</span></div>
+                </div>
+                <div class="schedule-item">
+                    <div>
+                        <i class="ri-time-line"></i> <b>11:00 AM</b> - Kaye Ashley Mizal
+                    </div>
+                    <div>Facial Treatment — <span>Olivia Brown</span></div>
+                </div>
+                <div class="schedule-item">
+                    <div>
+                        <i class="ri-time-line"></i> <b>12:00 PM</b> - Sarah Johnson
+                    </div>
+                    <div>Hot Stone Massage — <span>Sophia Lee</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Appointment -->
+        <section class="section book-appointment">
+            <h3>Book Appointment</h3>
+
+            <form>
+                <label>Customer</label>
+                <select>
+                    <option>Select customer...</option>
+                </select>
+
+                <label>Service</label>
+                <select>
+                    <option>Select service...</option>
+                </select>
+
+                <label>Therapist</label>
+                <select>
+                    <option>Select therapist...</option>
+                </select>
+
+                <label>Appointment Summary</label>
+                <textarea rows="5" readonly>
+                Date: Not selected
+                Time: Not selected
+                Customer: Not selected
+                Service: Not selected
+                Therapist: Not selected
+                </textarea>
+
+                <button type="submit" class="btn-book">Book Appointment</button>
+            </form>
+        </section>
+    </main>
+</div>
+
+
+@code {
+
+    private void Logout()
+    {
+        Session.Logout();
+        Navigation.NavigateTo("/auth/login");
+    }
+
+    private void POS()
+    {
+        Navigation.NavigateTo("/Cashier/POS");
+    }
+
+}

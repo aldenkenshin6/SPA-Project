@@ -38,6 +38,7 @@ wwwroot\_content\Radzen.Blazor\Radzen.Blazor.js
 wwwroot\_content\Radzen.Blazor\Radzen.Blazor.min.js
 Components\Pages\Admin\CustomerManagement.razor.css
 Components\Pages\Admin\Dashboard.razor.css
+Components\Pages\Cashier\Appointment.razor.css
 Components\Pages\Cashier\POS.razor.css
 Components\Pages\Customers.razor.css
 wwwroot\_content\Radzen.Blazor\css\dark-base.css.gz
@@ -65,7 +66,7 @@ wwwroot\_content\Radzen.Blazor\css\software-base.css.gz
 wwwroot\_content\Radzen.Blazor\css\math.css.gz
 wwwroot\_content\Radzen.Blazor\css\humanistic-wcag.css.gz
 wwwroot\_content\Radzen.Blazor\css\material.css.gz
-wwwroot\SPA1.jr5xkra0i8.bundle.scp.css.gz
+wwwroot\SPA1.04ayu1av17.bundle.scp.css.gz
 wwwroot\_content\Radzen.Blazor\css\default-base.css.gz
 wwwroot\_content\Radzen.Blazor\css\dark-base.css.br
 wwwroot\css\bootstrap\bootstrap.min.css.br
@@ -92,7 +93,7 @@ wwwroot\_content\Radzen.Blazor\css\software-base.css.br
 wwwroot\_content\Radzen.Blazor\css\math.css.br
 wwwroot\_content\Radzen.Blazor\css\humanistic-wcag.css.br
 wwwroot\_content\Radzen.Blazor\css\material.css.br
-wwwroot\SPA1.jr5xkra0i8.bundle.scp.css.br
+wwwroot\SPA1.04ayu1av17.bundle.scp.css.br
 wwwroot\_content\Radzen.Blazor\css\default-base.css.br
 wwwroot\_content\Radzen.Blazor\css\default-wcag.css.br
 wwwroot\_content\Radzen.Blazor\css\standard.css.br
@@ -178,7 +179,7 @@ splashSplashScreen.scale-150.png
 splashSplashScreen.scale-200.png
 splashSplashScreen.scale-400.png
 wwwroot\SPA1.styles.css
-wwwroot\SPA1.jr5xkra0i8.bundle.scp.css
+wwwroot\SPA1.04ayu1av17.bundle.scp.css
 AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css

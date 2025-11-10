@@ -4,7 +4,7 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Left Side */
+/* left side nag aking pagmamahal */
 .login-left {
     flex: 1;
     background: #2e3f38;
@@ -37,7 +37,7 @@
         opacity: 0.9;
     }
 
-/* Right Side */
+/* right side ng ka pighatian */
 .login-right {
     flex: 1;
     background: #f3f3f3;
@@ -46,7 +46,7 @@
     justify-content: center;
 }
 
-/* Card */
+/* Yu-Gi-Oh Card */
 .login-card {
     background: white;
     padding: 50px 60px;
