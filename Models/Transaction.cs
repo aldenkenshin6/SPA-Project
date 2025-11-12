@@ -21,7 +21,13 @@ public partial class Transaction
 
     public decimal? AmountPaid { get; set; }
 
+    public decimal? TotalAmount { get; set; }
+
+    public decimal? AmountChange { get; set; }
+
     public virtual Appointment? Appointment { get; set; }
+
+    public virtual ICollection<Accountings> Accountings { get; set; } = new List<Accountings>();
 
     public virtual Product? Product { get; set; }
 }

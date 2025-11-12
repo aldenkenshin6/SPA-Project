@@ -1,0 +1,76 @@
+﻿@page "/employee-management"
+@using System.Collections.ObjectModel
+
+<PageTitle>Employee Management</PageTitle>
+
+<div class="page-container">
+
+    <div class="header">
+        <h2>Employee Management</h2>
+        <p>Manage spa staff, schedules, and performance</p>
+        <button class="btn-add">Add Employee</button>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <h3>Total Staff</h3>
+            <p>@Employees.Count</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🧍‍♂️</div>
+            <h3>On Duty Today</h3>
+            <p>@OnDutyCount</p>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">✨</div>
+            <h3>Appointments Today</h3>
+            <p>@AppointmentsToday</p>
+        </div>
+    </div>
+
+    <div class="employee-cards">
+        @foreach (var emp in Employees)
+        {
+            <div class="employee-card">
+                <div class="emp-header">
+                    <div class="emp-avatar">👤</div>
+                    <div>
+                        <h4>@emp.Name</h4>
+                        <p class="role">@emp.Role</p>
+                    </div>
+                </div>
+
+                <p><strong>Specialties:</strong></p>
+                <div class="specialties">
+                    @foreach (var sp in emp.Specialties)
+                    {
+                        <span class="tag">@sp</span>
+                    }
+                </div>
+
+                <div class="emp-contact">
+                    <p>📧 @emp.Email</p>
+                    <p>📱 @emp.Phone</p>
+                    <p>🕓 @emp.Schedule</p>
+                </div>
+
+                <button class="btn-edit">Edit</button>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    public record Employee(string Name, string Role, string Email, string Phone, string Schedule, string[] Specialties);
+
+    ObservableCollection<Employee> Employees = new()
+    {
+        new("Emma Wilson", "Senior Massage Therapist", "emma.w@spa.com", "09125057532", "Mon-Fri, 9AM-5PM", new[] { "Swedish Massage", "Hot Stone" }),
+        new("Olivia Brown", "Facial Specialist", "olivia.b@spa.com", "09125057532", "Mon-Fri, 9AM-5PM", new[] { "Anti-Aging Facial", "Deep Cleansing", "Nail Care" }),
+        new("Sophia Lee", "Massage Therapist", "sophia.l@spa.com", "09125057532", "Mon-Fri, 9AM-5PM", new[] { "Aromatherapy", "Body Scrub" })
+    };
+
+    int OnDutyCount = 8;
+    int AppointmentsToday = 33;
+}

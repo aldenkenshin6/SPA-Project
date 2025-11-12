@@ -1,10 +1,10 @@
-wwwroot\images\LOGO2.png
-wwwroot\css\Login.css
-wwwroot\css\bootstrap\bootstrap.min.css.map
-wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\app.css
-wwwroot\index.html
+wwwroot\css\bootstrap\bootstrap.min.css
+wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\css\Login.css
 wwwroot\images\back.png
+wwwroot\images\LOGO2.png
+wwwroot\index.html
 C:\Users\alden\source\repos\SPA1\SPA1\wwwroot\css\Login.css
 C:\Users\alden\source\repos\SPA1\SPA1\wwwroot\css\bootstrap\bootstrap.min.css.map
 C:\Users\alden\source\repos\SPA1\SPA1\wwwroot\css\bootstrap\bootstrap.min.css

@@ -422,7 +422,6 @@ C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\comp
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\9hzavlxykm-6rmizt26mn.gz
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\1bgazymoih-6gzpyzhau4.gz
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\9bx2qgm5qa-8inm30yfxf.gz
-C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\wqwoype6ak-btr5d33tb2.gz
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\staticwebassets.build.json
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\staticwebassets.build.json.cache
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\staticwebassets.development.json
@@ -469,7 +468,6 @@ C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\comp
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\9hzavlxykm-6rmizt26mn.br
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\1bgazymoih-6gzpyzhau4.br
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\9bx2qgm5qa-8inm30yfxf.br
-C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\wqwoype6ak-btr5d33tb2.br
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\staticwebassets.publish.json
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\staticwebassets.publish.endpoints.json
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.inputs
@@ -530,8 +528,15 @@ C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\scop
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\scopedcss\Components\Pages\Admin\Dashboard.razor.rz.scp.css
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\scopedcss\projectbundle\SPA1.bundle.scp.css
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\1qzgmn7598-7k0py6flou.gz
-C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\uunnkymovs-uu2j11qmhq.gz
-C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\o3aqzddkei-uu2j11qmhq.gz
 C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\1qzgmn7598-7k0py6flou.br
-C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\uunnkymovs-uu2j11qmhq.br
-C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\o3aqzddkei-uu2j11qmhq.br
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\scopedcss\Components\Pages\Cashier\Appointment.razor.rz.scp.css
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\scopedcss\Components\Pages\Cashier\POS.razor.rz.scp.css
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\scopedcss\Components\Pages\Customers.razor.rz.scp.css
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\staticwebassets.upToDateCheck.txt
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\SPA1.sourcelink.json
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\wqwoype6ak-wtpilzczj2.gz
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\wqwoype6ak-wtpilzczj2.br
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\uunnkymovs-s6qfgqvdix.gz
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\o3aqzddkei-s6qfgqvdix.gz
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\uunnkymovs-s6qfgqvdix.br
+C:\Users\alden\source\repos\SPA1\SPA1\obj\Debug\net9.0-ios\iossimulator-x64\compressed\publish\o3aqzddkei-s6qfgqvdix.br

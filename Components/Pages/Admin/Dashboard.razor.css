@@ -4,6 +4,48 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* _------------------------- loading --------------*/
+
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 63, 56, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    z-index: 9999;
+    pointer-events: all;
+}
+
+/* Spinner animation */
+.spinner {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------- loading ------------------------*/
+
 /* Sidebar */
 .sidebar {
     width: 350px;
@@ -38,6 +80,8 @@
 .nav-links {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
 }
 
     .nav-links a {

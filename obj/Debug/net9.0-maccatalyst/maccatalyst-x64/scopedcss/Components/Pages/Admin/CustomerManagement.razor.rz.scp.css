@@ -4,9 +4,51 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* _------------------------- loading --------------*/
+
+
+/* Loading overlay */
+.loading-overlay[b-ewh06zm8i9] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 63, 56, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    z-index: 9999;
+    pointer-events: all;
+}
+
+/* Spinner animation */
+.spinner[b-ewh06zm8i9] {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin-b-ewh06zm8i9 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin-b-ewh06zm8i9 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------- loading ------------------------*/
+
 /* Sidebar */
 .sidebar[b-ewh06zm8i9] {
-    width: 260px;
+    width: 350px;
     background: #2e3f38;
     color: white;
     display: flex;
@@ -38,6 +80,8 @@
 .nav-links[b-ewh06zm8i9] {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
 }
 
     .nav-links a[b-ewh06zm8i9] {
@@ -84,16 +128,33 @@
 
 #Logout[b-ewh06zm8i9] {
     font-size: 37px;
-    color: red;
+    color: white;
+}
+
+.ri-user-line[b-ewh06zm8i9]{
+    border: 2px solid;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
 }
 
 .Labels[b-ewh06zm8i9] {
     margin-top: 8px;
     display: flex;
     flex-direction: column;
-    font-size: 13px;
+    align-items: start;
 }
 
+.Admin-title[b-ewh06zm8i9] {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Session-Username[b-ewh06zm8i9] {
+    font-size: 13px;
+}
 
 .dashboard-main[b-ewh06zm8i9] {
     flex: 1;

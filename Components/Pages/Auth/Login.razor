@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" @bind="password" placeholder="Enter your password" />
+                <input type="password" @bind="password" placeholder="Enter your password"/>
             </div>
 
             <div class="options">
@@ -43,17 +43,58 @@
     </div>
 </div>
 
+@if (isLoading)
+{
+    <div class="loading-overlay">
+        <img src="images/LOGO2.png" class="spinner" alt="LOGO">
+        <p>Logging in, please wait...</p>
+    </div>
+}
+
 
 @code {
     private string? username;
     private string? password;
     private string? message;
+    private bool isLoading = false;
 
-    private void CheckLogin()
+    private async Task CheckLogin()
     {
+
+        message = null;
+
+        isLoading = true;
+
+        StateHasChanged();
+
+        await Task.Delay(800);
+
         var user = _context.Users.FirstOrDefault(u => u.Username == username);
 
-        if (user != null && BCrypt.Verify(password, user.Password))
+        if (string.IsNullOrWhiteSpace(username) && string.IsNullOrWhiteSpace(password))
+        {
+            StateHasChanged();
+            isLoading = false;
+            message = "Please input Username and Password";
+        }
+
+        else if (string.IsNullOrWhiteSpace(username))
+        {
+            StateHasChanged();
+            isLoading = false;
+            message = "Please input Username";
+
+        }
+
+        else if (string.IsNullOrWhiteSpace(password))
+        {
+            StateHasChanged();
+            isLoading = false;
+            message = "Please input Password";
+
+        }
+
+        else if (user != null && BCrypt.Verify(password, user.Password))
         {
             // Store Username and Role to the Session Data
             Session.SetUser(user.Username, user.Role, user.Email);
@@ -76,8 +117,12 @@
         }
         else
         {
+            StateHasChanged();
+            isLoading = false;
             message = "Invalid Username or Password";
         }
+
+        StateHasChanged();
     }
 
     void cus()

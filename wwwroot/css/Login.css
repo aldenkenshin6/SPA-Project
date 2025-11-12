@@ -4,10 +4,52 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* _------------------------- loading --------------*/
+
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 63, 56, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    z-index: 9999;
+}
+
+/* Spinner animation */
+.spinner {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------- loading ------------------------*/
+
+
 /* left side nag aking pagmamahal */
 .login-left {
     flex: 1;
-    background: #2e3f38;
+     background: #2e3f38; 
     color: white;
     display: flex;
     flex-direction: column;
@@ -130,6 +172,11 @@
     .login-btn:hover {
         background: #3b5048;
     }
+
+    .login-btn:active {
+        background: #4e695f;
+    }
+
 
 .message-the{
     display: flex;

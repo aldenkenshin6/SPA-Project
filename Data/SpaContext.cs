@@ -32,6 +32,8 @@ public partial class SpaContext : DbContext
 
     public virtual DbSet<Transaction> Transactions { get; set; }
 
+    public virtual DbSet<Accountings> Accountings { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
 //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -66,6 +68,40 @@ public partial class SpaContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK_Appointments_Users");
+        });
+
+        modelBuilder.Entity<Accountings>(entity =>
+        {
+            entity.Property(e => e.AccountingId).HasColumnName("Accounting_ID");
+            entity.Property(e => e.TransactionId).HasColumnName("Transaction_ID");
+            entity.Property(e => e.UserId).HasColumnName("User_ID");
+            entity.Property(e => e.EntryDate)
+                  .HasColumnName("Entry_Date")
+                  .HasColumnType("datetime");
+            entity.Property(e => e.Description).HasColumnType("text");
+            entity.Property(e => e.AccountType)
+                  .HasColumnName("Account_Type")
+                  .HasMaxLength(50)
+                  .IsUnicode(false);
+            entity.Property(e => e.AccountCategory)
+                  .HasColumnName("Account_Category")
+                  .HasMaxLength(100)
+                  .IsUnicode(false);
+            entity.Property(e => e.DebitAmount)
+                  .HasColumnType("decimal(10, 2)")
+                  .HasColumnName("Debit_Amount");
+            entity.Property(e => e.CreditAmount)
+                  .HasColumnType("decimal(10, 2)")
+                  .HasColumnName("Credit_Amount");
+            entity.Property(e => e.Balance).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Transaction).WithMany(p => p.Accountings)
+            .HasForeignKey(d => d.TransactionId)
+            .HasConstraintName("FK_Accountings_Transactions");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Accountings)
+            .HasForeignKey(d => d.UserId)
+            .HasConstraintName("FK_Accountings_Users");
         });
 
         modelBuilder.Entity<Category>(entity =>
@@ -195,6 +231,14 @@ public partial class SpaContext : DbContext
             entity.Property(e => e.TransactionDate)
                 .HasColumnType("datetime")
                 .HasColumnName("Transaction_date");
+
+            entity.Property(e => e.AmountChange)
+                  .HasColumnType("decimal(10, 2)")
+                  .HasColumnName("Amount_Change");
+
+            entity.Property(e => e.TotalAmount)
+                  .HasColumnType("decimal(10, 2)")
+                  .HasColumnName("Total_Amount");
 
             entity.HasOne(d => d.Appointment).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.AppointmentId)

@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\LOGO2.png"
     },
     {
+      "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\images\\back.png",
+      "PackagePath": "staticwebassets\\images\\back.png"
+    },
+    {
       "Id": "C:\\Users\\alden\\source\\repos\\SPA1\\SPA1\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

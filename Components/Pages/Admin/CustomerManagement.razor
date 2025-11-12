@@ -14,16 +14,15 @@
             <img src="images/LOGO2.png" class="logo" alt="Logo" />
             <h2>Spa Management</h2>
             <p>Wellness & Beauty Center</p>
+            <nav class="nav-links">
+                <a href="#" @onclick="Dashboard"><i class="ri-dashboard-line"></i> Dashboard</a>
+                <a href="#" class="active"><i class="ri-user-3-line"></i> Customers</a>
+                <a href="#" @onclick="Appointment"><i class="ri-calendar-line"></i> Appointment</a>
+                <a href="#" @onclick="Services"><i class="ri-service-line"></i> Services</a>
+                <a href="#" @onclick="Employee"><i class="ri-team-line"></i> Employees</a>
+                <a href="#" @onclick="Payments"><i class="ri-wallet-line"></i> Payments</a>
+            </nav>
         </div>
-
-        <nav class="nav-links">
-            <a href="#" @onclick="Dashboard"><i class="ri-dashboard-line"></i> Dashboard</a>
-            <a href="#" class="active"><i class="ri-user-3-line"></i> Customers</a>
-            <a href="#" @onclick="Appointment"><i class="ri-calendar-line"></i> Appointment</a>
-            <a href="#" @onclick="Services"><i class="ri-service-line"></i> Services</a>
-            <a href="#" @onclick="Employee"><i class="ri-team-line"></i> Employees</a>
-            <a href="#" @onclick="Payments"><i class="ri-wallet-line"></i> Payments</a>
-        </nav>
 
         <div class="sidebar-footer">
             <div class="AdminUser">
@@ -126,10 +125,25 @@
     </div>
 </div>
 
-@code{
+@if (isLoading)
+{
+    <div class="loading-overlay">
+        <img src="images/LOGO2.png" class="spinner" alt="LOGO">
+        <p>Logging out, please wait...</p>
+    </div>
+}
 
-    private void Logout()
+@code{
+    private bool isLoading = false;
+
+    private async Task Logout()
     {
+        isLoading = true;
+        StateHasChanged();
+
+        await Task.Delay(800);
+
+        Session.Logout();
         Navigation.NavigateTo("/auth/login");
     }
 

@@ -30,4 +30,8 @@ public partial class User
     public DateOnly? DateCreated { get; set; }
 
     public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+
+    public virtual ICollection<Accountings> Accountings { get; set; } = new List<Accountings>();
+
+
 }
