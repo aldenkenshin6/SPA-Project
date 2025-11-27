@@ -1,0 +1,241 @@
+﻿@page "/Inventory/StockIn"
+@using SPA1.Services
+@using SPA1.Components.Layout
+@using SPA1.Data.Context
+@using SPA1.Models
+@using Radzen
+@using Radzen.Blazor
+@using Microsoft.EntityFrameworkCore
+@layout MainLayout
+@inject LocalSpaContext _local
+@inject OnlineSpaContext _online
+@inject UserSession Session
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+<div class="dashboard-container">
+    <!-- Sidebar Kupal -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/LOGO2.png" class="logo" alt="Logo" />
+            <h2>Spa Management</h2>
+            <p>Wellness & Beauty Center</p>
+            <nav class="nav-links">
+                <a @onclick="InventoryDashBoard"><i class="ri-dashboard-line"></i> Inventory Dashboard</a>
+                <a class="active"><i class="ri-file-add-line"></i> Stock In Records</a>
+                <a @onclick="StockOut"><i class="ri-file-reduce-line"></i> Stock Out Records</a>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="AdminUser">
+                <i class="ri-user-line"></i>
+                <div class="Labels">
+                    <label class="Admin-title">@Session.Role User</label>
+                    <label class="Session-Username">@Session.Email</label>
+                </div>
+            </div>
+            <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>
+        </div>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="stockin-main">
+        <section class="inventory-header">
+            <div>
+                <p class="eyebrow">Stock Management</p>
+                <h1>Stock In Records</h1>
+                <p class="subtext">View and track all stock in transactions.</p>
+            </div>
+        </section>
+
+        <section class="summary-container">
+            <div class="summary-card total">
+                <span>Total Stock In</span>
+                <h3>@TotalStockIn</h3>
+                <p>@FilteredStockIn.Count() records match current filters.</p>
+            </div>
+            <div class="summary-card accent">
+                <span>Total Quantity</span>
+                <h3>@TotalQuantity</h3>
+                <p>Total units received.</p>
+            </div>
+        </section>
+
+        <section class="inventory-panel filter-panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Filter Stock In Records</h3>
+                    <p>Narrow down the list by date range.</p>
+                </div>
+            </div>
+            <div class="filter-controls">
+                <RadzenDatePicker @bind-Value="StartDate" 
+                                 @bind-Value:after="OnDateChanged"
+                                 Placeholder="Start Date" 
+                                 Style="width: 100%; max-width: 220px;" />
+                <RadzenDatePicker @bind-Value="EndDate" 
+                                 @bind-Value:after="OnDateChanged"
+                                 Placeholder="End Date" 
+                                 Style="width: 100%; max-width: 220px;" />
+                <button class="btn-filter" @onclick="ClearFilters">
+                    <i class="ri-close-line"></i> Clear Filters
+                </button>
+            </div>
+        </section>
+
+        <section class="inventory-panel table-panel">
+            <div class="panel-header">
+                <div>
+                    <h3>Stock In Records</h3>
+                    <p>@FilteredStockIn.Count() records displayed</p>
+                </div>
+            </div>
+
+            <RadzenDataGrid TItem="Inventory"
+                            Data="@FilteredStockIn"
+                            ColumnWidth="200px"
+                            Class="inventory-table"
+                            AllowPaging="true"
+                            PageSize="10"
+                            AllowSorting="true"
+                            ShowPagingSummary="true">
+
+                <Columns>
+                    <RadzenDataGridColumn TItem="Inventory" Property="DateCreated" Title="Date" FormatString="{0:MM/dd/yyyy}" />
+                    <RadzenDataGridColumn TItem="Inventory" Property="Product.ProductName" Title="Product Name" />
+                    <RadzenDataGridColumn TItem="Inventory" Property="QuantityChange" Title="Quantity" />
+                    <RadzenDataGridColumn TItem="Inventory" Title="User">
+                        <Template>
+                            @GetUserName(context)
+                        </Template>
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Inventory" Property="ChangeType" Title="Type" />
+                </Columns>
+
+            </RadzenDataGrid>
+        </section>
+    </main>
+</div>
+
+@if (isLoading)
+{
+    <div class="loading-overlay">
+        <img src="images/LOGO2.png" class="spinner" alt="LOGO">
+        <p>Logging out, please wait...</p>
+    </div>
+}
+
+@if (isLoadingNext)
+{
+    <div class="loading-overlay">
+        <img src="images/LOGO2.png" class="spinner" alt="LOGO">
+        <p>Please wait...</p>
+    </div>
+}
+
+@code {
+
+    private bool isLoading = false;
+    private bool isLoadingNext = false;
+
+    List<Inventory> StockInRecords = new();
+    DateTime? StartDate;
+    DateTime? EndDate;
+
+    protected override void OnInitialized()
+    {
+        LoadStockInRecords();
+    }
+
+    private void LoadStockInRecords()
+    {
+        try
+        {
+            StockInRecords = _local.Inventories
+                .Where(i => i.ChangeType == "IN")
+                .Include(i => i.Product)
+                .Include(i => i.User)
+                .OrderByDescending(i => i.DateCreated)
+                .ToList();
+        }
+        catch
+        {
+            StockInRecords = _online.Inventories
+                .Where(i => i.ChangeType == "IN")
+                .Include(i => i.Product)
+                .Include(i => i.User)
+                .OrderByDescending(i => i.DateCreated)
+                .ToList();
+        }
+    }
+
+    // FILTER LOGIC
+    IEnumerable<Inventory> FilteredStockIn =>
+        StockInRecords.Where(i =>
+            (StartDate == null || (i.DateCreated.HasValue && i.DateCreated.Value >= DateOnly.FromDateTime(StartDate.Value.Date))) &&
+            (EndDate == null || (i.DateCreated.HasValue && i.DateCreated.Value <= DateOnly.FromDateTime(EndDate.Value.Date)))
+        );
+
+    // SUMMARY CARD VALUES
+    int TotalStockIn => StockInRecords.Count();
+    int TotalQuantity => FilteredStockIn.Sum(i => i.QuantityChange ?? 0);
+
+    private string GetUserName(Inventory inventory)
+    {
+        if (inventory.User == null)
+            return "N/A";
+        
+        var firstName = inventory.User.FirstName ?? "";
+        var lastName = inventory.User.LastName ?? "";
+        
+        if (string.IsNullOrWhiteSpace(firstName) && string.IsNullOrWhiteSpace(lastName))
+            return inventory.User.Username ?? "N/A";
+        
+        return $"{firstName} {lastName}".Trim();
+    }
+
+    private void OnDateChanged()
+    {
+        StateHasChanged();
+    }
+
+    private void ClearFilters()
+    {
+        StartDate = null;
+        EndDate = null;
+        StateHasChanged();
+    }
+
+    private async Task Logout()
+    {
+        isLoading = true;
+        StateHasChanged();
+
+        await Task.Delay(800);
+
+        Session.Logout();
+        Navigation.NavigateTo("/auth/login");
+    }
+
+    private async Task InventoryDashBoard()
+    {
+        isLoadingNext = true;
+        StateHasChanged();
+
+        await Task.Delay(800);
+
+        Navigation.NavigateTo("/Inventory/Dashboard");
+    }
+    
+    private async Task StockOut()
+    {
+        isLoadingNext = true;
+        StateHasChanged();
+
+        await Task.Delay(800);
+
+        Navigation.NavigateTo("/Inventory/StockOut");
+    }
+
+}

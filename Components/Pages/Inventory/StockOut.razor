@@ -1,0 +1,101 @@
+﻿@page "/Inventory/StockIn"
+@using SPA1.Services
+@using SPA1.Components.Layout
+@using SPA1.Data.Context
+@using SPA1.Models
+@using Radzen
+@using Radzen.Blazor
+@using Microsoft.EntityFrameworkCore
+@layout MainLayout
+@inject LocalSpaContext _local
+@inject OnlineSpaContext _online
+@inject UserSession Session
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+<div class="dashboard-container">
+    <!-- Sidebar Kupal -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/LOGO2.png" class="logo" alt="Logo" />
+            <h2>Spa Management</h2>
+            <p>Wellness & Beauty Center</p>
+            <nav class="nav-links">
+                <a @onclick="InventoryDashBoard"><i class="ri-dashboard-line"></i> Inventory Dashboard</a>
+                <a @onclick="StockIn"><i class="ri-file-add-line"></i> Stock In Records</a>
+                <a class="active"><i class="ri-file-add-line"></i> Stock Out Records</a>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="AdminUser">
+                <i class="ri-user-line"></i>
+                <div class="Labels">
+                    <label class="Admin-title">@Session.Role User</label>
+                    <label class="Session-Username">@Session.Email</label>
+                </div>
+            </div>
+            <i id="Logout" title="Logout" @onclick="Logout" class="ri-logout-box-line"></i>
+        </div>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="stockin-main">
+
+    </main>
+</div>
+
+@if (isLoading)
+{
+    <div class="loading-overlay">
+        <img src="images/LOGO2.png" class="spinner" alt="LOGO">
+        <p>Logging out, please wait...</p>
+    </div>
+}
+
+@if (isLoadingNext)
+{
+    <div class="loading-overlay">
+        <img src="images/LOGO2.png" class="spinner" alt="LOGO">
+        <p>Please wait...</p>
+    </div>
+}
+
+@code {
+
+    private bool isLoading = false;
+    private bool isLoadingNext = false;
+
+    private async Task Logout()
+    {
+        isLoading = true;
+        StateHasChanged();
+
+        await Task.Delay(800);
+
+        Session.Logout();
+        Navigation.NavigateTo("/auth/login");
+    }
+
+    private async Task InventoryDashBoard()
+    {
+        isLoadingNext = true;
+        StateHasChanged();
+
+
+        await Task.Delay(800);
+
+        Navigation.NavigateTo("/Inventory/Dashboard");
+    }
+    private async Task StockIn()
+    {
+        isLoadingNext = true;
+        StateHasChanged();
+
+
+        await Task.Delay(800);
+
+        Navigation.NavigateTo("/Inventory/StockIn");
+    }
+
+}
